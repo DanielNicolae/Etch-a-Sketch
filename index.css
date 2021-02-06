@@ -1,0 +1,88 @@
+:root {
+    --rows: 16;
+    --columns: 16;
+    --drawColor: rgba(9, 255, 0, 1);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    font-size: 15px;
+    color: #000;
+    height: screen;
+    background: rgb(0, 14, 26);
+    position: relative;
+}
+
+#reset {
+    padding: 10px;
+    border-radius: 3px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    background: rgb(190, 190, 190);
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.705),
+                inset -3px -3px 3px rgba(102, 102, 102, 0.705);
+}
+
+#reset:focus {
+    outline: none;
+}
+
+#reset:hover {
+    background: rgb(255, 217, 0);
+    box-shadow: 1px 1px 5px rgba(253, 236, 0, 0.705),
+                -1px -1px 5px rgba(253, 236, 0, 0.705),
+                inset 3px 3px 3px rgba(255, 255, 255, 0.705),
+                inset -3px -3px 3px rgba(102, 102, 102, 0.705);
+}
+
+.clicked {
+    animation-name: clicked;
+    animation-duration: 0.8s;
+}
+
+@keyframes clicked {
+    0% {box-shadow: none;}
+    50% {box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.705),
+                    -1px -1px 5px rgba(102, 102, 102, 0.705) !important;}
+    100% {box-shadow: none;}
+}
+
+#grid {
+    display: grid;
+    justify-content: center;
+    margin-top: 30px;
+    grid-template-columns: repeat(var(--rows), 30px);
+    grid-template-rows: repeat(var(--columns), 30px);
+}
+
+#grid div:hover {
+    transition: all 0.3s;
+    transform: scale(1.2);
+    box-shadow: inset 2px 2px 5px rgba(40, 250, 180, 0.89),
+                inset -2px -2px 5px rgba(40, 250, 180, 0.89);
+}
+
+#grid .odd {
+    background: rgb(255, 255, 255);
+}
+
+#grid .even {
+    background: rgb(145, 145, 145);
+}
+
+
+#colorWheel {
+    margin-top: 10px;
+    margin-left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 150px;
+    height: 150px;
+}
