@@ -45,8 +45,6 @@ button.addEventListener("click", () => {
     let newColumns = prompt("Choose the number of columns:");
     document.documentElement.style.setProperty("--rows", newRows);
     document.documentElement.style.setProperty("--columns", newColumns);
-    console.log(newRows);
-    console.log(newColumns)
     if (newRows <= 100 && newColumns <= 100) {
         evenOddCells();
     }
@@ -71,3 +69,4 @@ colorPicker.addEventListener("click", (mouseEvent) => {
     let imgData = canvasContext.getImageData(mouseEvent.offsetX, mouseEvent.offsetY, 1, 1);
     rgba = imgData.data;
 });
+
